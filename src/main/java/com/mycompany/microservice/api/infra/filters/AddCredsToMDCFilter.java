@@ -1,6 +1,6 @@
 package com.mycompany.microservice.api.infra.filters;
 
-import com.mycompany.microservice.api.facades.AuthFacade;
+//import com.mycompany.microservice.api.facades.AuthFacade;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,8 +28,8 @@ public class AddCredsToMDCFilter extends OncePerRequestFilter {
       final FilterChain filterChain)
       throws ServletException, IOException {
 
-    MDC.put(USER_MDC_KEY, AuthFacade.getUserEmail());
-    MDC.put(COMPANY_MDC_KEY, AuthFacade.getCompanySlug());
+    MDC.put(USER_MDC_KEY, "admin@gmail.com");
+    MDC.put(COMPANY_MDC_KEY, "Admin -company-slug");
 
     try {
       filterChain.doFilter(request, response);

@@ -26,7 +26,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.*;
 import org.springframework.lang.NonNull;
-import org.springframework.security.access.AccessDeniedException;
+//import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -140,7 +140,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
    * AccessDeniedException, and it's a developer's responsibility to catch it
    * */
   @ResponseStatus(HttpStatus.FORBIDDEN)
-  @ExceptionHandler(AccessDeniedException.class)
+//  @ExceptionHandler(AccessDeniedException.class)
   public ProblemDetail handleAccessDeniedException(final Exception ex, final WebRequest request) {
     log.info(ex.getMessage(), ex);
     return this.buildProblemDetail(HttpStatus.FORBIDDEN, null);

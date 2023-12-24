@@ -20,19 +20,19 @@ slack:
       url: ${SLACK_API_ALERT_URL}
       name: ${SLACK_API_ALERT_CHANNEL}
 
-rabbitmq:
-  host: ${RABBITMQ_HOST}
-  port: ${RABBITMQ_PORT}
-  username: ${RABBITMQ_USERNAME}
-  password: ${RABBITMQ_PASSWORD}
-  listeners:
-    event:
-      queue: ${RABBITMQ_LISTENERS_EVENT_QUEUE}
-      prefetch-count: ${RABBITMQ_LISTENERS_EVENT_PREFETCH_COUNT:10}
-  publishers:
-    webhook:
-      exchange: ${RABBITMQ_PUBLISHERS_WEBHOOK_EXCHANGE}
-      routingkey: ${RABBITMQ_PUBLISHERS_WEBHOOK_ROUTING_KEY}
+#rabbitmq:
+#  host: ${RABBITMQ_HOST}
+#  port: ${RABBITMQ_PORT}
+#  username: ${RABBITMQ_USERNAME}
+#  password: ${RABBITMQ_PASSWORD}
+#  listeners:
+#    event:
+#      queue: ${RABBITMQ_LISTENERS_EVENT_QUEUE}
+#      prefetch-count: ${RABBITMQ_LISTENERS_EVENT_PREFETCH_COUNT:10}
+#  publishers:
+#    webhook:
+#      exchange: ${RABBITMQ_PUBLISHERS_WEBHOOK_EXCHANGE}
+#      routingkey: ${RABBITMQ_PUBLISHERS_WEBHOOK_ROUTING_KEY}
 
 kubernetes:
   service-name: ${KUBERNETES_SERVICE_NAME:api}

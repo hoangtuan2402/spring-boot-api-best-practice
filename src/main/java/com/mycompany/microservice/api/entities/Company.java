@@ -30,8 +30,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+//import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
@@ -188,11 +188,11 @@ public class Company extends BaseEntity {
     return StringUtils.isNotBlank(this.slug) && this.slug.equals(slug);
   }
 
-  public Collection<GrantedAuthority> getGrantedAuthoritiesFromCompanyType() {
-    return this.getApiRolesFromCompanyType().stream()
-        .map(role -> new SimpleGrantedAuthority("ROLE_" + role.getName()))
-        .collect(Collectors.toSet());
-  }
+//  public Collection<GrantedAuthority> getGrantedAuthoritiesFromCompanyType() {
+//    return this.getApiRolesFromCompanyType().stream()
+//        .map(role -> new SimpleGrantedAuthority("ROLE_" + role.getName()))
+//        .collect(Collectors.toSet());
+//  }
 
   private List<UserRolesEnum> getApiRolesFromCompanyType() {
     final List<UserRolesEnum> roles = new ArrayList<>();

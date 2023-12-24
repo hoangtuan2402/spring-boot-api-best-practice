@@ -10,18 +10,18 @@ http:
     webhook-site:
       base-url: https://webhook.site/b4b43dbd-9980-4690-8db7-e50be66e4d0c
 
-rabbitmq:
-  host: localhost
-  port: 5672
-  username: user
-  password: password
-  listeners:
-    event:
-      queue: webhook
-  publishers:
-    webhook:
-      exchange: outbound
-      routingkey: to_outbound_webhook
+#rabbitmq:
+#  host: localhost
+#  port: 5672
+#  username: user
+#  password: password
+#  listeners:
+#    event:
+#      queue: webhook
+#  publishers:
+#    webhook:
+#      exchange: outbound
+#      routingkey: to_outbound_webhook
 
 management:
   endpoint:
@@ -42,9 +42,9 @@ jdbc:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/api?stringtype=unspecified&reWriteBatchedInserts=true
-    username: user
-    password: password
+    url: jdbc:postgresql://localhost:5432/api-practice?stringtype=unspecified&reWriteBatchedInserts=true
+    username: admin
+    password: 123456
   jpa:
     properties:
       hibernate:
@@ -55,8 +55,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8000/realms/api
-          jwk-set-uri: http://localhost:8000/realms/api/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8000/realms/master
+          jwk-set-uri: http://localhost:8000/realms/master/protocol/openid-connect/certs
 
   devtools:
     restart:
